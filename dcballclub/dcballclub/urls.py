@@ -8,7 +8,6 @@ from django.views.i18n import set_language
 from mezzanine.core.views import direct_to_template
 from mezzanine.conf import settings
 
-
 admin.autodiscover()
 
 # Add the urlpatterns for any custom Django applications here.
