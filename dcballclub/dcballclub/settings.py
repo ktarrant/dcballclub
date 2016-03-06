@@ -242,7 +242,6 @@ INSTALLED_APPS = (
     "mezzanine.boot",
     "mezzanine.conf",
     "mezzanine.core",
-    "balltheme",
     "mezzanine.pages",
     "mezzanine.blog",
     "mezzanine.forms",
@@ -251,8 +250,6 @@ INSTALLED_APPS = (
     # "mezzanine.accounts",
     # "mezzanine.mobile",
 )
-
-# THEME="mezzanine_html5boilerplate"
 
 # List of middleware classes to use. Order is important; in the request phase,
 # these middleware classes will be applied in the order given, and in the
