@@ -47,16 +47,23 @@ $(function() {
 </head>
 <body id="{% block body_id %}body{% endblock %}">
 
-<div id="header" class="container">
-    <div class="row">
-        <div id="site-info" class="col-md-6">
-            <div id="site-logo"><a href="/"><img src="{{ STATIC_URL }}img/logo.png" /></a></div>
+<body class="left-sidebar">
+<div id="page-wrapper">
+
+<!-- Header -->
+<header id="header">
+    <nav id="nav">
+        <div id="navigation" class="container">
+        <!-- Right Nav Section --> 
+        <ul class="right"> 
+            <li>
+            <div id="site-logo"><a href="/"><img src="{{ STATIC_URL }}img/logo.png"/></a></div>
             <div id="site-titles">
-            {% if settings.SITE_TITLE %}<div id="site-title"><a href="/">{{ settings.SITE_TITLE }}</a></div>{% endif %}
             {% if settings.SITE_TAGLINE %}<div id="site-tagline">{{ settings.SITE_TAGLINE }}</div>{% endif %}
             </div>
-        </div>
-        <div id="user-info" class="col-md-6">
+            </li>
+
+            <li>
             {% nevercache %}
             {% include "includes/user_panel.html" %}
             {% endnevercache %}
@@ -64,13 +71,12 @@ $(function() {
             <input class="input-medium" placeholder="{% trans "Search" %}" type="text" name="q" value="{{ request.REQUEST.q }}">
             <button class="btn btn-small" type="submit"><i class="icon-search"></i></button>
             </form>
+            </li>
+        </ul>
+        {% page_menu "pages/menus/dropdown.html" %}
         </div>
-    </div>
-</div>
-
-<div id="navigation" class="container">
-    {% page_menu "pages/menus/dropdown.html" %}
-</div>
+    </nav>
+</header>
 
 <div id="main" class="container">
 
